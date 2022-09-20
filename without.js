@@ -1,11 +1,11 @@
 const assertArraysEqual = function(firstArray, secondArray) {
   for (let i = 0; i < firstArray.length; i++) {
     if (firstArray[i] !== secondArray[i]) {
-      console.log(`🛑🛑🛑 Assertion Failed, arrays are not equal`);
+      console.log(`🛑🛑🛑 Assertion Failed, [${firstArray}] is not equal to [${secondArray}]`);
       return;
     }
   }
-  console.log(`✅✅✅ Assertion Passed, arrays are equal`);
+  console.log(`✅✅✅ Assertion Passed, [${firstArray}] is equal to [${secondArray}]`);
 };
 
 const without = function(inputArray, removedArray) {
@@ -29,7 +29,7 @@ assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
 
 assertArraysEqual(without(["1", "2", "3", "4"], [1, 2, "3"]), ["1", "2", "4"]);
 assertArraysEqual(without([2, 1, 2, 3], [1, 2]), [3]);
-assertArraysEqual(without([3, 2, 1, 2, 3], [1, 2]), [3,3]);
+assertArraysEqual(without([3, 2, 1, 2, 3, 4], [1, 2]), [3,3]);
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
