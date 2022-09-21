@@ -8,18 +8,18 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(firstArray, secondArray) {
+  let arrayMaxLength = firstArray.length
+  if (secondArray.length > arrayMaxLength){
+    arrayMaxLength = secondArray.length
+  }
+
+  for (let i = 0; i < arrayMaxLength; i++) {
+    if (firstArray[i] !== secondArray[i]) {
+      return false;
+    }
+  }
   
-  for (let i = 0; i < firstArray.length; i++) {
-    if (firstArray[i] !== secondArray[i]) {
-      return false;
-    }
-  }
-  for (let i = 0; i < secondArray.length; i++) {
-    if (firstArray[i] !== secondArray[i]) {
-      return false;
-    }
-  }
-  return true;
+  return true
 };
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
