@@ -12,16 +12,16 @@ const assertArraysEqual = function(firstArray, secondArray) {
 const letterPositions = function(sentence) {
   const results = {};
   const lowercase = sentence.toLowerCase();
-  let position = 0
-  for (let letters of lowercase){
-    if(!results[letters]){
+  let position = 0;
+  for (let letters of lowercase) {
+    if (!results[letters]) {
       results[letters] = [];
     }
     results[letters].push(position);
-    position ++
+    position ++;
   }
   delete results[" "];
-  delete results["\n"]
+  delete results["\n"];
   return results;
 };
 
