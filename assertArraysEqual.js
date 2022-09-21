@@ -1,5 +1,9 @@
 const assertArraysEqual = function(firstArray, secondArray) {
-  for (let i = 0; i < firstArray.length; i++) {
+  let arrayMaxLength = firstArray.length
+  if (secondArray.length > arrayMaxLength){
+    arrayMaxLength = secondArray.length
+  }
+  for (let i = 0; i < arrayMaxLength; i++) {
     if (firstArray[i] !== secondArray[i]) {
       console.log(`🛑🛑🛑 Assertion Failed, [${firstArray}] is not equal to [${secondArray}]`);
       return;
@@ -8,6 +12,6 @@ const assertArraysEqual = function(firstArray, secondArray) {
   console.log(`✅✅✅ Assertion Passed, [${firstArray}] is equal to [${secondArray}]`);
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
+assertArraysEqual([1, 2, 3], [1, 2, 3, 4]); // => true
 assertArraysEqual([1, 2, 3], [1, 2, 1]); // => false
 
