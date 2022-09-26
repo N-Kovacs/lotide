@@ -12,7 +12,7 @@ const without = function(inputArray, removedArray) {
   let outputArray = inputArray.slice(0);
   let matchs = [];
   for (let i = 0; i < inputArray.length; i++) {
-    for (let j = 0; j < removedArray.length; j++) {
+    for (let j = 0; j < removedArray.length; j++) {cd
       if (inputArray[i] === removedArray[j]) {
         matchs.push(i);
       }
